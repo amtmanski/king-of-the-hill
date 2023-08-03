@@ -1,0 +1,32 @@
+{% extends 'tournament/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Table</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Gracz</th>
+                <th>Ilość meczy wygranych</th>
+                <th>Punkty</th>
+                <!-- Add more column headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in classification %}
+            <tr>
+                <td>{{ item.player }}</td>
+                <td>{{ item.won_matches }}</td>
+                <td>{{ item.points }}</td>
+                <!-- Add more columns to display more fields -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}

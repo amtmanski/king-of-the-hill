@@ -1,0 +1,34 @@
+{% extends 'tournament/base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Table</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Event</th>
+                <th>Mecz nr</th>
+                <th><b>Wygrany</b></th>
+                <th>Przegrany</th>
+                <!-- Add more column headers as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in matches %}
+            <tr>
+                <td>{{ item.event }}</td>
+                <td>{{ item.match_number }}</td>  <!-- Replace field1, field2, etc. with actual fields from your model -->
+                <td><b>{{ item.winner }}</b></td>
+                <td>{{ item.loser }}</td>
+                <!-- Add more columns to display more fields -->
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
+{% endblock %}
